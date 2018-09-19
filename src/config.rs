@@ -254,6 +254,10 @@ pub struct WindowConfig {
     #[serde(default, deserialize_with = "failure_default")]
     dimensions: Dimensions,
 
+    /// Start in fullscreen mode
+    #[serde(default, deserialize_with = "failure_default")]
+    fullscreen: bool,
+
     /// Pixel padding
     #[serde(default="default_padding", deserialize_with = "deserialize_padding")]
     padding: Delta<u8>,
@@ -276,6 +280,12 @@ fn deserialize_padding<'a, D>(deserializer: D) -> ::std::result::Result<Delta<u8
             eprintln!("problem with config: {}; Using default value", err);
             Ok(default_padding())
         },
+    }
+}
+
+impl WindowConfig {
+    pub fn fullscreen(&self) -> bool {
+        self.fullscreen
     }
 }
 
