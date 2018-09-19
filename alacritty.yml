@@ -16,6 +16,7 @@ env:
 
 window:
   # Initial window dimensions in character columns and lines
+  # Falls back to size specified by window manager if set to 0x0. 
   # Will only be effective if fullscreen is disabled
   # (changes require restart)
   dimensions:
