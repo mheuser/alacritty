@@ -287,9 +287,7 @@ impl WindowConfig {
     pub fn fullscreen(&self) -> bool {
         self.fullscreen
     }
-}
 
-impl WindowConfig {
     pub fn decorations(&self) -> bool {
         self.decorations
     }
