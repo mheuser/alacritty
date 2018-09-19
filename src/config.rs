@@ -299,6 +299,7 @@ impl Default for WindowConfig {
     fn default() -> Self {
         WindowConfig{
             dimensions: Default::default(),
+            fullscreen: false,
             padding: default_padding(),
             decorations: true,
         }
